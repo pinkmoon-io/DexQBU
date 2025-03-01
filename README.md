@@ -1,2 +1,2 @@
-# https://roythuly.github.io/DexQBU/
+# https://pinkmoon-io.github.io/DexQBU/
 
