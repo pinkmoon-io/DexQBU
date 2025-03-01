@@ -1,1 +1,180 @@
 
+<head>
+	<title>DexQBU</title>
+	<meta charset="utf-8">
+	<meta property="og:title" content="Title">
+	<meta property="og:description" content="Test">
+	<link rel="stylesheet" href="style.css?1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	</script>
+	<script type="text/javascript" async
+  		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+	</script>
+	<script type="text/javascript">
+		function toggle(id) {
+			var e = document.getElementById(id);
+			if(e.style.display == 'block')
+				e.style.display = 'none';
+			else
+				e.style.display = 'block';
+		}
+	</script>
+</head>
+<div class="header" id="top">
+	<h1>
+		DexQBU: High-Efficient Reinforcement Learning for Dexterous Manipulation
+	</h1>
+	<table class="authors">
+		<h4>
+			<span class="authors-affiliation">Kexin ZHENG<sup>1</sup>, 
+				Yu Luo Liu<sup>2</sup>, Lei Lv<sup>3</sup>,
+				 Kai Chen<sup>1</sup>, Qi Dou<sup>1</sup>
+				 
+			<br>
+			<br>
+			<span class="authors-affiliation" style="font-size: 0.95em"><sup>1</sup>Department of Computer Science and Engineering, Chinese University of Hong Kong, <br>
+				 <sup>2</sup> Huawei Noah's Ark Lab, <br>
+				  <sup>3</sup>Shanghai Research Institute for Intelligent Autonomous Systems, Tongji University <br> 
+		</h4>
+	</table>
+</div>
+<div class="content">
+	<div>
+		<h2>Abstract</h2>
+		<p class="abstract">
+		Dexterous manipulation tasks, characterized by complex 3D observations and high degrees of freedom, pose significant challenges
+		 for reinforcement learning (RL), especially when considering the inherent demand for high-quality data and efficient exploration.
+		  To address these challenges, we propose \textbf{DexQBU}, a unified framework that combines upstream representation learning with downstream policy 
+		  optimization in a synergistic architecture. In the upstream phase, we leverage PointNet for domain-specific segmentation of 3D point clouds 
+		  to extract local geometric features, while ULIP-2 aligns these features within a semantic space enriched by a 3D foundational model. 
+		  This hierarchical processing bridges the gap between raw sensory input and actionable policy learning. For downstream optimization,
+		   we introduce the Quantile-Boosted Actor-Critic (QBAC) algorithm, a novel off-policy method that mitigates regression toward low-quality 
+		   data by prioritizing high-quantile-based updates. By integrating global feature dimensionality reduction upstream with a high-exploited optimized
+		    policy downstream, DexQBU narrows the exploration space and maximizes information extraction from limited data. Evaluated on the DexArt benchmark,
+			 DexQBU achieves high success rates while reducing required environmental interactions by \textbf{3.9$\times$} compared to prior methods, 
+			 which demonstrates the efficacy of unifying representation learning with data-efficient RL, offering a pathway for scalable dexterous manipulation
+			  in real-world applications.
+		</p>
+	</div>
+	<div class="hr"></div>
+	<div>
+		<h2>Architecture Overview</h2>
+		<div class="figure-caption">
+			<p>
+				DexQBU architecture. 
+			</p>
+		</div>
+		<div class="figure-caption"></div>
+			<div class="figure" style="height: 410px; background-image: url(Figures/dex2.png);"></div>
+		</div>
+		<h2>Framework of DexQBU</h2>
+		<div class="figure-caption"></div>
+			<div class="figure" style="height: 410px; background-image: url(Figures/dex1.png);"></div>
+		</div>
+		<h2>Perfomance of DexQBU</h2>
+
+
+		<h3>Performance on 4 manipulation tasks(seen)</h3>
+		<div class="notice">
+			<p style="text-align: center; margin-top: 20px;"></p>
+		</div>
+
+		<div class="content-video">
+			<div class="content-video-frame medium">
+				<span></span>
+				<video playsinline autoplay loop muted>
+					<source src="Videos/b_seen.mp4" type="video/mp4"/>
+				</video>
+			</div>
+			<div class="content-video-frame medium">
+				<span></span>
+				<video playsinline autoplay loop muted>
+					<source src="Videos/f_seen.mp4" type="video/mp4"/>
+				</video>
+			</div>
+			<div class="content-video-frame medium">
+				<span></span>
+				<video playsinline autoplay loop muted>
+					<source src="Videos/l_seen.mp4" type="video/mp4"/>
+				</video>
+			</div>
+			<div class="content-video-frame medium">
+				<span></span>
+				<video playsinline autoplay loop muted>
+					<source src="Videos/t_seen.mp4" type="video/mp4"/>
+				</video>
+			</div>
+		</div>
+		<h3>Performance on 4 manipulation tasks(unseen)</h3>
+		<div class="notice">
+			<p style="text-align: center; margin-top: 20px;"></p>
+		</div>
+		<div class="content-video">
+			<div class="content-video-frame medium">
+				<span></span>
+				<video playsinline autoplay loop muted>
+					<source src="Videos/b_unseen.mp4" type="video/mp4"/>
+				</video>
+			</div>
+			<div class="content-video-frame medium">
+				<span></span>
+				<video playsinline autoplay loop muted>
+					<source src="Videos/f_unseen.mp4" type="video/mp4"/>
+				</video>
+			</div>
+			<div class="content-video-frame medium">
+				<span></span>
+				<video playsinline autoplay loop muted>
+					<source src="Videos/l_unseen.mp4" type="video/mp4"/>
+				</video>
+			</div>
+			<div class="content-video-frame medium">
+				<span></span>
+				<video playsinline autoplay loop muted>
+					<source src="Videos/t_unseen.mp4" type="video/mp4"/>
+				</video>
+			</div>
+		</div>
+		<style>
+			.content-video {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 32px;
+			}
+		
+			.content-video-container {
+
+				max-width: 100%;
+				position: relative;
+			}
+		
+			.content-video-frame {
+				/* 使视频容器的宽度适应其内容 */
+				width: 100%;
+				max-width: 1200px;
+			}
+		
+			.content-video-frame video {
+				width: 100%;
+				height: auto;
+			}
+		</style>
+		<h2>Video</h2>
+		<div class="content-video" style="margin-bottom: 32px">
+			<div class="content-video-container">
+				<div class="content-video-frame medium">
+					<span></span>
+					<video playsinline="" autoplay="" loop="" preload="" muted="" width="400%">
+						<source src="Videos/video.mp4" type="video/mp4"/>
+					</video>
+				</div>
+			</div>
+		</div>
+</div>
+<footer>
+<a href="#top" class="bold">To top &UpArrow;</a>
+</footer>
